@@ -31,6 +31,8 @@ When you run for the first time, it will create `C:\Users\{USERNAME}\ff13-saves\
 
 Put your practice saves into each folder. Next time you run the command, the saves will be copied to FF13 save files folder, sorted with chapter and file names.
 
+You can name save files however you want, but I'd recommend `01.dat`, `02.dat` style of naming to make sure it works as intended.
+
 **EXISTING SAVE FILES IN FF13'S SAVE FOLDER WILL BE OVERWRITTEN. BACKUP IF YOU NEED.**
 
 You don't have to put saves into all folders. If a chapter folder is empty, it will simply be ignored.
