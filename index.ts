@@ -1,7 +1,6 @@
 import path from "path";
 import fs from "fs";
 import os from "os";
-import { utimes } from "utimes";
 
 if (os.platform() !== "win32") {
 	console.error("FF13 only works on Windows");
@@ -32,44 +31,37 @@ const parseArgs = () => {
 	return [...numArgs].sort((a, b) => a - b);
 };
 
-const readChapterSaves = async (chapter: number) => {
+const readChapterSaves = (chapter: number) => {
 	const dir = path.join(
 		path.join(srcDir, `ch${String(chapter).padStart(2, "0")}`)
 	);
 	try {
-		const files = await fs.promises.readdir(dir);
+		const files = fs.readdirSync(dir);
 		return [...files]
 			.sort((a, b) => a.localeCompare(b))
 			.map((file) => path.resolve(dir, file));
 	} catch (error) {
 		if (error.code === "ENOENT") {
 			console.log("Creating", dir);
-			await fs.promises.mkdir(dir, { recursive: true });
+			fs.mkdirSync(dir, { recursive: true });
 			return [];
 		}
 		throw error;
 	}
 };
 
-const main = async () => {
-	const chapters = parseArgs();
-	let fileId = 0;
-	for (const ch of chapters) {
-		const saveFiles = await readChapterSaves(ch);
-		for (const src of saveFiles) {
-			const dest = path.resolve(
-				destDir,
-				`ff13-${String(fileId).padStart(2, "0")}.dat`
-			);
-			fs.copyFileSync(src, dest);
-			await utimes(dest, {
-				mtime: new Date(`${2000 + fileId}-01-01T00:00:00`).getTime(),
-			});
-			fileId += 1;
-		}
+const chapters = parseArgs();
+let fileId = 0;
+for (const ch of chapters) {
+	const saveFiles = readChapterSaves(ch);
+	for (const src of saveFiles) {
+		const dest = path.resolve(
+			destDir,
+			`ff13-${String(fileId).padStart(2, "0")}.dat`
+		);
+		fs.copyFileSync(src, dest);
+		const timestamp = new Date(`${2000 + fileId}-01-01T00:00:00`).getTime();
+		fs.promises.utimes(dest, timestamp, timestamp);
+		fileId += 1;
 	}
-};
-
-main().catch((error) => {
-	console.error(error);
-});
+}

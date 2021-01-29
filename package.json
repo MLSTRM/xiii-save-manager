@@ -14,10 +14,6 @@
 		"build": "tsc && yarn package",
 		"package": "pkg --targets node14-win-x64,node14-win-x86 package.json --out-path out"
 	},
-	"dependencies": {
-		"tslib": "2.1.0",
-		"utimes": "4.0.3"
-	},
 	"devDependencies": {
 		"@semantic-release/changelog": "5.0.1",
 		"@semantic-release/git": "9.0.0",
