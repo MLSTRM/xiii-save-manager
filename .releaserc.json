@@ -8,8 +8,8 @@
 			"@semantic-release/github",
 			{
 				"assets": [
-					{ "path": "out/ff13-save-manager-x64.exe" },
-					{ "path": "out/ff13-save-manager-x86.exe" }
+					{ "path": "out/ff13-save-organizer-x64.exe" },
+					{ "path": "out/ff13-save-organizer-x86.exe" }
 				]
 			}
 		],
