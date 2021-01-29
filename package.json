@@ -1,9 +1,9 @@
 {
-	"name": "ff13-save-manager",
-	"homepage": "https://github.com/Hoishin/ff13-save-manager#readme",
+	"name": "xiii-save-manager",
+	"homepage": "https://github.com/Hoishin/xiii-save-manager#readme",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Hoishin/ff13-save-manager.git"
+		"url": "https://github.com/Hoishin/xiii-save-manager.git"
 	},
 	"type": "commonjs",
 	"bin": "./index.js",
