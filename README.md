@@ -1,6 +1,6 @@
 # xiii-save-manager
 
-Organize your FF13 practice save files and load into the game in order.
+Organize your FF13 practice save files and show them in the game in customized order.
 
 ## Planned Features
 
