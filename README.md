@@ -5,28 +5,25 @@ Organize your FF13 practice save files and load into the game in order.
 ## Features
 
 - [x] Organize save files and sort by chapter and file names
-- [ ] Profile, allowing you to switch between different sets of saves
+- [ ] Profile, allowing you to switch between different sets of saves (e.g. Any% and All Misions)
 
 ## Install
 
 ### Executable
 
-1. Download executable from releases
-1. Open Command Prompt or PowerShell to run the executable
-   ```
-   .\xiii-save-manager-x64.exe
-   ```
+Download the executable from [releases](https://github.com/Hoishin/xiii-save-manager/releases).
+
+To run, double click the executable or run from Command Prompt or PowerShell.
 
 ### npm
 
-1. Install with npm
-   ```
-   npm install -g xiii-save-manager
-   ```
-1. Run the command
-   ```
-   xiii-save-manager
-   ```
+If you already have Node.js installed, you can use it to install.
+
+```
+npm install -g xiii-save-manager
+```
+
+To run, run command `xiii-save-manager` in Command Prompt or PowerShell.
 
 ## Usage
 
@@ -40,30 +37,21 @@ You don't have to put saves into all folders. If a chapter folder is empty, it w
 
 ### Put saves of all chapters
 
-```
-xiii-save-manager.exe
-```
-
-or
-
-```
-xiii-save-manager.exe all
-```
+When you run with no options, it puts all saves from all chapter folders.
 
 ### Put saves of specific chapters
 
-Only Chapter 5
+You need to use CommandPrompt or PowerShell to specify chapters.
 
-```
-xiii-save-manager.exe 5
-```
-
-Chapter 12 and 13
-
-```
-xiii-save-manager.exe 12 13
-```
+- Only Chapter 5:
+  ```
+  xiii-save-manager.exe 5
+  ```
+- Chapter 12 and 13
+  ```
+  xiii-save-manager.exe 12 13
+  ```
 
 ## Under the hood
 
-In-game save file list sorts them with `mtime`, the timestamp of when the save file was modified. This script uses npm package `utime` to modify that after copying save files.
+In-game save file list sorts them with `mtime`, the timestamp of when the save file was modified.

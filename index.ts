@@ -50,18 +50,26 @@ const readChapterSaves = (chapter: number) => {
 	}
 };
 
-const chapters = parseArgs();
-let fileId = 0;
-for (const ch of chapters) {
-	const saveFiles = readChapterSaves(ch);
-	for (const src of saveFiles) {
-		const dest = path.resolve(
-			destDir,
-			`ff13-${String(fileId).padStart(2, "0")}.dat`
-		);
-		fs.copyFileSync(src, dest);
-		const timestamp = new Date(`${2000 + fileId}-01-01T00:00:00`).getTime();
-		fs.promises.utimes(dest, timestamp, timestamp);
-		fileId += 1;
+const main = () => {
+	const chapters = parseArgs();
+	let timestamp = Date.now();
+	let fileId = 0;
+	for (const ch of chapters) {
+		const saveFiles = readChapterSaves(ch);
+		for (const src of saveFiles) {
+			const dest = path.resolve(
+				destDir,
+				`ff13-${String(fileId).padStart(2, "0")}.dat`
+			);
+			fs.copyFileSync(src, dest);
+			fs.utimesSync(
+				dest,
+				new Date(timestamp + fileId * 1000 * 60),
+				new Date(timestamp + fileId * 1000 * 60)
+			);
+			fileId += 1;
+		}
 	}
-}
+};
+
+main();

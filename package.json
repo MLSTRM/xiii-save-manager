@@ -11,8 +11,7 @@
 		"index.js"
 	],
 	"scripts": {
-		"build": "tsc && yarn package",
-		"package": "pkg --targets node14-win-x64,node14-win-x86 package.json --out-path out"
+		"build": "tsc && pkg --targets node14-win-x64,node14-win-x86 package.json --out-path out"
 	},
 	"devDependencies": {
 		"@semantic-release/changelog": "5.0.1",
