@@ -2,7 +2,7 @@
 
 Organize your FF13 practice save files and load into the game in order.
 
-## Features
+## Planned Features
 
 - [x] Organize save files and sort by chapter and file names
 - [ ] Profile, allowing you to switch between different sets of saves (e.g. Any% and All Misions)
