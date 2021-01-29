@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Hoishin/xiii-save-manager/compare/v1.0.0...v1.0.1) (2021-01-29)
+
+
+### Bug Fixes
+
+* utime error ([c7a76e7](https://github.com/Hoishin/xiii-save-manager/commit/c7a76e7d1f83c35e5df78c31f1b0808b0ff23aee))
+
 # 1.0.0 (2021-01-29)
 
 
