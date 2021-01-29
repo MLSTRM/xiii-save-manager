@@ -1,3 +1,15 @@
+## [1.0.1](https://github.com/Hoishin/ff13-save-organizer/compare/v1.0.0...v1.0.1) (2021-01-29)
+
+
+### Bug Fixes
+
+* rename asset names ([b4fece4](https://github.com/Hoishin/ff13-save-organizer/commit/b4fece4fa7a22887c921aec3584746781e59ac88))
+
+
+### Performance Improvements
+
+* remove dependencies ([e612f0b](https://github.com/Hoishin/ff13-save-organizer/commit/e612f0be0889fe54293f27a2762cf88293d9d977))
+
 # 1.0.0 (2021-01-29)
 
 
