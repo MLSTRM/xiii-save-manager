@@ -1,0 +1,18 @@
+{
+	"plugins": [
+		"@semantic-release/commit-analyzer",
+		"@semantic-release/release-notes-generator",
+		"@semantic-release/changelog",
+		"@semantic-release/npm",
+		[
+			"@semantic-release/github",
+			{
+				"assets": [
+					{ "path": "out/ff13-save-manager-x64.exe" },
+					{ "path": "out/ff13-save-manager-x86.exe" }
+				]
+			}
+		],
+		"@semantic-release/git"
+	]
+}
