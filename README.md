@@ -17,7 +17,7 @@ To run, double click the executable or run from Command Prompt or PowerShell.
 
 ### npm
 
-If you already have Node.js installed, you can use it to install.
+If you already have Node.js installed, you can use npm to install.
 
 ```
 npm install -g xiii-save-manager
@@ -27,7 +27,7 @@ To run, run command `xiii-save-manager` in Command Prompt or PowerShell.
 
 ## Usage
 
-When you run for the first time, It will create `C:\Users\{USERNAME}\ff13-saves` folder with 13 folders for each chapter.
+When you run for the first time, it will create `C:\Users\{USERNAME}\ff13-saves\default` folder with 13 folders for each chapter.
 
 Put your practice saves into each folder. Next time you run the command, the saves will be copied to FF13 save files folder, sorted with chapter and file names.
 
@@ -41,7 +41,7 @@ When you run with no options, it puts all saves from all chapter folders.
 
 ### Put saves of specific chapters
 
-You need to use CommandPrompt or PowerShell to specify chapters.
+You need to use Command Prompt or PowerShell to specify chapters.
 
 - Only Chapter 5:
   ```
