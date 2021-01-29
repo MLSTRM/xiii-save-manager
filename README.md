@@ -1,4 +1,4 @@
-# ff13-save-manager
+# ff13-save-organizer
 
 Organize your FF13 practice save files and load into the game in order.
 
@@ -14,18 +14,18 @@ Organize your FF13 practice save files and load into the game in order.
 1. Download executable from releases
 1. Open Command Prompt or PowerShell to run the executable
    ```
-   .\ff13-save-manager-x64.exe
+   .\ff13-save-organizer-x64.exe
    ```
 
 ### npm
 
 1. Install with npm
    ```
-   npm install -g ff13-save-manager
+   npm install -g ff13-save-organizer
    ```
 1. Run the command
    ```
-   ff13-save-manager
+   ff13-save-organizer
    ```
 
 ## Usage
@@ -41,13 +41,13 @@ You don't have to put saves into all folders. If a chapter folder is empty, it w
 ### Put saves of all chapters
 
 ```
-ff13-save-manager.exe
+ff13-save-organizer.exe
 ```
 
 or
 
 ```
-ff13-save-manager.exe all
+ff13-save-organizer.exe all
 ```
 
 ### Put saves of specific chapters
@@ -55,13 +55,13 @@ ff13-save-manager.exe all
 Only Chapter 5
 
 ```
-ff13-save-manager.exe 5
+ff13-save-organizer.exe 5
 ```
 
 Chapter 12 and 13
 
 ```
-ff13-save-manager.exe 12 13
+ff13-save-organizer.exe 12 13
 ```
 
 ## Under the hood
