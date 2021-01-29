@@ -20,11 +20,11 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: ${{ env.YARN_CACHE_FOLDER }}
-          key: ${{ runner.os }}-yarn }}
+          key: ${{ runner.os }}-yarn
       - uses: actions/cache@v2
         with:
           path: ${{ env.PKG_CACHE_PATH }}
-          key: ${{ runner.os }}-pkg }}
+          key: ${{ runner.os }}-pkg
       - uses: actions/setup-node@v2
         with:
           node-version: "14"
