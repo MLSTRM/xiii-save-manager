@@ -20,7 +20,35 @@ const srcDir = path.resolve(os.homedir(), "ff13-saves/default");
 
 const parseArgs = () => {
 	const args = process.argv.slice(2);
+	const location = parseSteamLocationIfPresent(args);
+	const chapters = parseChapters(location ? args.slice(2) : args);
+	return {
+		chapters,
+		location
+	};
+};
 
+function parseSteamLocationIfPresent(args: any[]): string | undefined {
+	if(args && args.length>0) {
+		const steamProperty = args.find(e => e === '--steam');
+		if(steamProperty){
+			const index = args.indexOf(steamProperty);
+			if(index !== 0){
+				console.error("--steam flag must be specified at the start of the command, followed by the path to steam userdata directory, then chapters as normal");
+				process.exit(1);
+			}
+			if(args.length == index+1){
+				console.error("--steam flag supplied but no path to steam userdata directory was given");
+				process.exit(1);
+			}
+			const steamLocation = args[index+1];
+			return path.resolve(steamLocation, '292120/remote');
+		}
+	}
+	return undefined;
+}
+
+function parseChapters(args: any[]): number[] {
 	if (args.length === 0 || args.some((arg) => arg === "all")) {
 		return Array.from({ length: 13 }).map((_, i) => i + 1);
 	}
@@ -29,7 +57,7 @@ const parseArgs = () => {
 		return [];
 	}
 	return [...numArgs].sort((a, b) => a - b);
-};
+}
 
 const readChapterSaves = (chapter: number) => {
 	const dir = path.join(
@@ -51,14 +79,14 @@ const readChapterSaves = (chapter: number) => {
 };
 
 const main = () => {
-	const chapters = parseArgs();
+	const {chapters, location} = parseArgs();
 	let timestamp = Date.now();
 	let fileId = 0;
 	for (const ch of chapters) {
 		const saveFiles = readChapterSaves(ch);
 		for (const src of saveFiles) {
 			const dest = path.resolve(
-				destDir,
+				location ?? destDir,
 				`ff13-${String(fileId).padStart(2, "0")}.dat`
 			);
 			fs.copyFileSync(src, dest);
